@@ -1,0 +1,17 @@
+actions:
+  1:
+    action: delete_indices
+    description: "Delete indices older than 14 days (based on index creation date)"
+    filters:
+      - 
+        filtertype: pattern
+        kind: prefix
+        value: '^(someservice-|someservice-b-*).*$'
+      - 
+        direction: older
+        filtertype: age
+        source: creation_date
+        unit: days
+        unit_count: 14
+    options:
+      ignore_empty_list: true

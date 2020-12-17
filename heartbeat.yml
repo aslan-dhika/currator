@@ -1,0 +1,20 @@
+es_host: localhost
+es_port: 9200
+
+name: Heartbeat
+type: frequency
+index: heartbeat-*
+fields:
+- "monitor.status"
+num_events: 4
+timeframe:
+    seconds: 10
+filter:
+- term:
+     monitor.status: "down"
+include: ["@timestamp", "http.url", "http.response.status_code", "monitor.status"]
+alert:
+- "slack"
+slack_username_override: "AlertManager"
+slack_webhook_url: "https://hooks.slack.com/services/adsds/dadada"
+slack_emoji_override: ":alert:"
