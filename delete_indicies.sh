@@ -8,7 +8,7 @@ cd $WORKDIR
 
 curator --config $WORKDIR/config.yml $WORKDIR/action.yml
 
-cat $FILELOG | mail -a $FILELOG -s 'Delete Indicies on log.pomona.id '$TGL' ' a@example.id
+cat $FILELOG | mail -a $FILELOG -s 'Delete Indicies on hostname '$TGL' ' a@example.id
 
 rm -rf $FILELOG
 

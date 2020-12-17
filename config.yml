@@ -3,7 +3,7 @@ client:
   client_cert: ~
   client_key: ~
   hosts:
-    - "internal-elk-cluster-305311601.ap-southeast-1.elb.amazonaws.com"
+    - "localhost"
   http_auth: ~
   master_only: false
   port: 9200
